@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Canvas</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			canvas{
+				background: deepskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas">
+			你的浏览器不支持canvas，请升级浏览器
+		</canvas>
+	</body>
+</html>
+<script type="text/javascript">
+	/**
+	 * 
+	 * Context对象就是JavaScript操作Canvas的接口。 *使用[CanvasElement].getContext(‘2d’)来获取2D绘图上下文
+	 * getContext("2d") 对象是内建的 HTML5 对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法
+	 * 
+	 */
+	var canvas=document.getElementById("canvas");
+	var ctx=canvas.getContext("2d");//注意：2d小写
+/*	1 canvas坐标系
+	坐标系
+	鼠标悬停查看坐标系(相对坐标)demo03.html
+	2 设置绘制起点moveTo(x,y)
+	语法：ctx.moveTo(x, y);
+	解释：设置上下文绘制路径的起点。相当于移动画笔到某个位置
+	参数：x,y 都是相对于 canvas盒子的最左上角
+	注意：绘制线段前必须先设置起点，不然绘制无效。
+	3 绘制直线lineTo
+	语法：ctx.lineTo(x, y);
+	解释：从x,y的位置绘制一条直线到起点或者上一个线头点
+	参数：x,y 线头点坐标
+	绘制五子棋棋盘如：demo02.html
+	绘制简单的折线图表如：demo03.html
+	4 路径的开始和闭合
+	开始路径：ctx.beginPath();
+	闭合路径：ctx.closePath();
+	解释：如果复杂路径绘制，必须使用路径开始和结束。闭合路径会自动把最后的线头和开始的线头连在一起
+	beginPath: 核心的作用是将 不同绘制的形状进行隔离，每次执行此方法，表示重新绘制一个路径,跟之前的绘制的墨迹可以进行分开样式设置和管理
+	5 描边stroke()
+	语法：ctx.stroke();
+	解释：根据路径绘制线。路径只是草稿，真正绘制线必须执行stroke
+	6 绘制的基本步骤
+	第一步获得canvas元素=>canvasElem=document.getElementById('cavsElem');或者其他API
+	第二步：获得上下文 =>canvasElem.getContext('2d');
+	第三步：开始路径规划 =>ctx.beginPath()
+	第四步：移动起始点 =>ctx.moveTo(x, y)
+	第五步：绘制线(矩形、圆形、图片...) =>ctx.lineTo(x, y)
+	第六步：闭合路径 =>ctx.closePath();
+	第七步：绘制描边 =>ctx.stroke();*/
+	canvas.width = 900;     //设置标签的属性宽高
+    canvas.height = 600;    //千万不要用 canvas.style.height
+    canvas.style.border = "1px solid #000";
+
+    //绘制三角形
+    ctx.beginPath();        //开始路径
+    ctx.moveTo(100,100);    //三角形，左顶点
+    ctx.lineTo(300, 100);   //右顶点
+    ctx.lineTo(300, 300);   //底部的点
+    ctx.closePath();        //结束路径
+    ctx.stroke();           //描边路径
+</script>
