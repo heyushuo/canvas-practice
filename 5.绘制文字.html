@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" ></canvas>
+	</body>
+</html>
+<script type="text/javascript">
+	/*绘制文字
+
+	把之前绘制的饼状图继续绘制指定的文字，如：demo09.html
+	font 设置或返回文本内容的当前字体属性,如：ctx.font = "20px '微软雅黑'";
+	textAlign 设置或返回文本内容的当前对齐方式：ctx.textAlign = 'left';
+	start : 默认。文本在指定的位置开始
+	end : 文本在指定的位置结束
+	center: 文本的中心被放置在指定的位置
+	left : 文本左对齐
+	right : 文本右对齐
+	textAlgin
+	textBaseline 设置或返回在绘制文本时使用的当前文本基线
+	ctx.textBaseline = 'top';
+	alphabetic ： 默认。文本基线是普通的字母基线
+	top ： 文本基线是 em 方框的顶端
+	hanging ： 文本基线是悬挂基线
+	middle ： 文本基线是 em 方框的正中
+	ideographic： 文本基线是em基线
+	bottom ： 文本基线是 em 方框的底端
+	
+	1 绘制文字的方法
+
+	ctx.fillText()//在画布上绘制“被填充的”文本,实心
+	ctx.strokeText()//在画布上绘制文本（无填充），空心
+	ctx.measureText()//返回包含指定文本宽度的对象
+	如下ctx.measure('string')返回TextMetrics对象，TextMetrics的width属性就是string的宽度
+	ctx.measure()
+	ctx.measure()*/
+	var canvas=document.getElementById("canvas");
+	var ctx=canvas.getContext("2d");
+	canvas.width=200;
+	canvas.height=150;
+	canvas.style.border="1px solid black";
+	ctx.font = "20px '微软雅黑'";
+	ctx.textAlign = 'left';
+	ctx.fillStyle = "blue";
+//	ctx.fillText("我是何玉硕",50,50); 
+	var aa=ctx.measureText("我是何玉硕",50,50);
+//	var bb=ctx.measure("我是何玉硕",100,50)
+	console.log(aa);
+	console.log(aa.width);
+//	console.log(bb);
+//	console.log(bb.width);
+</script>
