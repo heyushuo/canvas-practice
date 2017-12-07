@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*context.drawImage(img,x,y,width,height);
+	参数说明：width 绘制图片的宽度， height：绘制图片的高度
+	如果指定宽高，最好成比例，不然图片会被拉伸，
+	width/height=setWidth/setHeight
+	setHeight=setWidth*height/width； //等比
+	等比公式：toH = Height*toW/Width; //等比
+	设置高 = 原高度 * 设置宽/ 原宽度;*/
+	var img = new Image();//这个就是 img标签的dom对象
+    img.src = "img/1.jpg";
+    img.alt = "文本信息";
+    img.onload = function() {
+        //图片加载完成后，执行此方法
+        document.getElementById("box").appendChild(img)
+    }
+
+</script>
