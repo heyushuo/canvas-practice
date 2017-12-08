@@ -28,7 +28,7 @@
         canvas.style.border='1px solid #000';
         ctx.fillRect(10,10,50,50);
 
-        //ctx.save();//1 把上面的ctx的状态保存一下,如状态：1
+        ctx.save();//1 把上面的ctx的状态保存一下,如状态：1
 
         //2  下面是改变了ctx的很多状态
         //把画布移动到100,100
@@ -38,7 +38,7 @@
         //放大或者缩小，是整个画布方法或者缩小
         ctx.scale(.5,.5);
         // 设置透明度
-        ctx.globalAlpha=.4;
+        ctx.globalAlpha=0.4;
         ctx.moveTo(0,0);
         ctx.lineTo(400,0);
         ctx.moveTo(0,0);
@@ -46,8 +46,8 @@
         ctx.stroke();
         ctx.fillRect(10,10,50,50);
 
-        // 3如果想回到最初的ctx状态：1
-       // ctx.restore();
+//      3如果想回到最初的ctx状态：1
+     ctx.restore();
         ctx.beginPath();
         ctx.fillStyle='green';
         ctx.fillRect(200,300,100,50);
