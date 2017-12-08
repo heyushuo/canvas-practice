@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="container">
+			<canvas id="canvas" width="" height=""></canvas>
+			<p>下边是图片的展示区域：</p>
+			<img src="" id="dataimg"/>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var canvas=document.getElementById("canvas");
+	var ctx=canvas.getContext('2d');
+	canvas.width = 300;     //设置标签的属性宽高
+    canvas.height = 100;  
+    
+    ctx.beginPath();
+    
+	ctx.fillStyle="red";
+	ctx.rect(0,0,100,100);
+	
+	ctx.closePath();        //结束路径
+    ctx.stroke();           //描边路径
+    
+    var dataUrl=canvas.toDataURL();
+    document.getElementById("dataimg").src=dataUrl;
+</script>
