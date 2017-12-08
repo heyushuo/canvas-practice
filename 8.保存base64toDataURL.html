@@ -28,4 +28,20 @@
     
     var dataUrl=canvas.toDataURL();
     document.getElementById("dataimg").src=dataUrl;
+    
+    
+	 /*    画布渲染画布(****)
+	
+	context.drawImage(img,x,y);
+	img参数也可以是画布，也就是把一个画布整体的渲染到另外一个画布上
+	如：demo21.html
+	canvas优化：可以JS创建隐藏的canvas绘制完之后再绘制到显示的canvas上去，如：demo22.html
+	var canvas1 = document.querySelector('#cavsElem1');
+    var canvas2 = document.querySelector('#cavsElem2');
+    var ctx1 = canvas1.getContext('2d');
+	var ctx2 = canvas2.getContext('2d');
+	//在第一个画布上绘制矩形
+    ctx1.fillRect(20, 20, 40, 40);      
+    //将第一个画布整体绘制到第二个画布上
+    ctx2.drawImage(canvas1, 10, 10); */
 </script>
